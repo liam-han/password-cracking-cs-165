@@ -20,13 +20,16 @@ def ascii(string):
 for i in range(1):
     passwords = [''.join(letter) for letter in product(ascii_lowercase, repeat = i+2)]
     for password in passwords:
-      
-	password = 'abcdef'
+        password = 'abcdef'
         combine = ascii(password + magic + salt)
         pw_salt_pw = ascii(password + salt + password)
         print(combine)
-        
-	alternate_sum = md5(password + salt + password).digest()
-      	x = ":".join("{:02x}".format(ord(c)) for c in alternate_sum) 
-	len1 = len(password)
-	len2 = len(alternate_sum)
+
+        alternate_sum = md5(password + salt + password).digest()
+        x = ":".join("{:02x}".format(ord(c)) for c in alternate_sum) 
+        len1 = len(password)
+        len2 = len(alternate_sum)
+        if len1 < len2:
+                l = alternate_sum[:len1]
+        else:
+                l = (alternate_sum*4)[:len1]
