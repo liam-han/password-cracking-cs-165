@@ -19,10 +19,8 @@ def ascii(string):
 for i in range(2):
     passwords = [''.join(letter) for letter in product(ascii_lowercase, repeat = i+2)]
     for password in passwords:
-        print(password)
+        password = ascii(password)
+        salt = ascii(salt)
         alternate_sum = md5(password + salt + password)
+
         print(alternate_sum)
-
-
-
-
