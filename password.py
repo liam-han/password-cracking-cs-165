@@ -20,7 +20,7 @@ for i in range(2):
     passwords = [''.join(letter) for letter in product(ascii_lowercase, repeat = i+2)]
     for password in passwords:
         password = ascii(password)
-        salt = ascii(salt)
+        salt = ascii(salt)[:8]
         alternate_sum = md5(password + salt + password)
 
         print(alternate_sum)
