@@ -7,11 +7,12 @@ from hashlib import md5
 
 salt = 'hfT7jp2q'
 hashh = 'DbF6xvgpiK3Nu1un54h3V1'
-magic = "$1"
+magic = "$1$"
 
 
 def ascii(string):
-    ascii_code = ''.join(str(ord(ch)) for ch in string)
+    #ascii_code = ':'.join(str(ord(ch)) for ch in string)
+    ascii_code = ":".join("{:02x}".format(ord(c)) for c in string)  
 
     return ascii_code
 
@@ -19,8 +20,10 @@ def ascii(string):
 for i in range(2):
     passwords = [''.join(letter) for letter in product(ascii_lowercase, repeat = i+2)]
     for password in passwords:
-        password = ascii(password)
-        salt = ascii(salt)[:8]
-        alternate_sum = md5(password + salt + password)
-
+        password = 'abcdef'
+        combine = ascii(password + magic + salt)
+        pw_salt_pw = ascii(password + salt + password)
+        print(combine)
+        alternate_sum = md5(pw_salt_pw).digest()
+        
         print(alternate_sum)
