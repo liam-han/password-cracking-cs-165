@@ -59,7 +59,7 @@ for i in range(1):
         init5 = four(password, len1)
         print(ascii(l))
         print(ascii(init5))
-        combine = ascii(password + magic + salt)
+        combine = ascii(password + magic + salt + l + init5)
         print("combine")
         print(combine)  
 
