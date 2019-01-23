@@ -63,7 +63,8 @@ for i in range(1):
         print("combine")
         print(combine)  
 
-        intermediate_sum = md5(password + magic + salt + l)
+        intermediate_sum = md5(password + magic + salt + l + init5)
+        print(intermediate_sum)
         '''for i in range(1000):
                 if i%2 ==  0:
                         temporary = 
