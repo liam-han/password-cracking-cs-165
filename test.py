@@ -18,11 +18,11 @@ def bit(number):
     return (1 << msb); 
 """
 
-def name(password, length)
+def name(password, length):
     x = int(bit(6))
+    print(x)
     x = (str(x))
     x = x[::-1]
-    print(x)
     string = '' 
     letter = password[0]
     for c in x:
@@ -34,8 +34,7 @@ def name(password, length)
             string += 'a'
     return string
 
-
-print(string)
+string = name('abcde', 5)
 
 ascii_code = ":".join("{:02x}".format(ord(c)) for c in string)
 print(ascii_code)

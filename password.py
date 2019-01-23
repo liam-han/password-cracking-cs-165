@@ -32,10 +32,8 @@ def four(password, length):
     string = '' 
     letter = password[0]
     for c in x:
-        print(c)
         if c == '1':
             string += chr(0)
-            print(chr(0))
         if c == '0':
             string += 'a'
     return string
@@ -44,8 +42,7 @@ def four(password, length):
 for i in range(1):
     passwords = [''.join(letter) for letter in product(ascii_lowercase, repeat = i+2)]
     for password in passwords:
-        password = 'abcdef' + magic + salt
-        password = bit(6)
+        password = 'abcdef'
         """print(password)
         x = ":".join("{:02x}".format(ord(c)) for c in password)
         print(x) """
@@ -60,6 +57,7 @@ for i in range(1):
         else:
                 l = (alternate_sum*5)[:len1]
         init5 = four(password, len1)
+        print(init5)
         combine = ascii(password + magic + salt + l + init5)
         print("combine")
         print(combine)  
