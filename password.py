@@ -57,8 +57,8 @@ for i in range(1):
         else:
                 l = (alternate_sum*5)[:len1]
         init5 = four(password, len1)
-        print(l)
-        print(init5)
+        print(ascii(l))
+        print(ascii(init5))
         combine = ascii(password + magic + salt)
         print("combine")
         print(combine)  
