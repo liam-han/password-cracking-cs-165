@@ -61,6 +61,7 @@ for i in range(1):
                 l = (alternate_sum*5)[:len1]
         init5 = four(password, len1)
         combine = ascii(password + magic + salt + l + init5)
+        print("combine")
         print(combine)  
 
         intermediate_sum = md5(password + magic + salt + l)
