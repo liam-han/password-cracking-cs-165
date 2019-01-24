@@ -102,7 +102,8 @@ for i in range(1):
         new_list = ''
         new_list = new_list.join(new_final)
         bits = bit_string(new_list)
-        print(new_final)
+        print(new_list)
+        print(bits)
         '''final_string = []
         for c in new_final:
                 print(c)
