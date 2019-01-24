@@ -43,9 +43,7 @@ for i in range(1):
     passwords = [''.join(letter) for letter in product(ascii_lowercase, repeat = i+2)]
     for password in passwords:
         password = 'abcdef'
-        """print(password)
-        x = ":".join("{:02x}".format(ord(c)) for c in password)
-        print(x) """
+        
 
         alternate_sum = md5(password + salt + password).digest()
         x = ":".join("{:02x}".format(ord(c)) for c in alternate_sum) 
@@ -69,7 +67,7 @@ for i in range(1):
         
         intermediate_sum = list()
         intermediate_sum.append(intermediate_sum_0)
-        for i in range(999):
+        for i in range(1000):
                 int_sum = ''
                 if i%2 == 0:
                         int_sum += intermediate_sum[i]
