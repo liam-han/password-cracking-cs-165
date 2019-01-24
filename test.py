@@ -39,4 +39,8 @@ for i, e in enumerate(example):
 test = bit_string('abcd')
 print(test)
 
+fuck = int('100010', 2)
+print(fuck)
 
+base_64 = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+print(len(base_64))
