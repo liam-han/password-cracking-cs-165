@@ -114,7 +114,7 @@ for i in range(1):
         pw = ''
         for each in o:
                 fuck = int(each, 2)
-                pw.append(base_64[fuck])
+                pw = pw.join(base_64[fuck])
         print(pw)
 
         '''final_string = []
