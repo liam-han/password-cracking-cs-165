@@ -8,7 +8,7 @@ for i in range(3):
     print(passwords)"""
 
 def bit_string(string):
-    x = ' '.join(format(ord(x), 'b') for x in string)
+    x = ' '.join('{0:08b}'.format(ord(x), 'b') for x in string)
 
     return x
 
@@ -36,7 +36,7 @@ for i, e in enumerate(example):
     print(i)
     print(e)
 
-testing[1] = 'ok'
-print(testing)
+test = bit_string('abcd')
+print(test)
 
-example = example.join()
+

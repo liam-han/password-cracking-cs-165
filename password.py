@@ -18,7 +18,7 @@ def ascii(string):
     return ascii_code
 
 def bit_string(string):
-    x = ''.join(format(ord(x), 'b') for x in string)
+    x = ' '.join('{0:08b}'.format(ord(x), 'b') for x in string)
 
     return x
 
@@ -100,7 +100,9 @@ for i in range(1):
                 new_final[i] = final[o]
 
         print(new_final) 
-        final_string = []
+        new_final = bit_string(new_final)
+        print(new_final)
+        '''final_string = []
         for c in new_final:
                 print(c)
                 x = bit_string(c)
@@ -110,4 +112,4 @@ for i in range(1):
 
         print(new_list)
         print(len(new_list))
-        
+        '''
