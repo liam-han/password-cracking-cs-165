@@ -44,3 +44,10 @@ print(fuck)
 
 base_64 = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 print(len(base_64))
+
+s = '1234567890'
+o = []
+while s:
+    o.append(s[-2:])
+    s = s[:-2]
+print(o)

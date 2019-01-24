@@ -105,11 +105,13 @@ for i in range(1):
         print(new_list)
         print(bits)
         n = 6
-        six_bits = [bits[i:i+n] for i in range(0, len(bits), n)]
-        print(six_bits)
-        six_bits = six_bits[::-1]
-        print(six_bits)
-
+        '''six_bits = [bits[i:i+n] for i in range(0, len(bits), n)]'''
+        o = []
+        while bits:
+                o.append(bits[-6:])
+                bits = bits[:-6]
+        print(o)
+        
         '''final_string = []
         for c in new_final:
                 print(c)
