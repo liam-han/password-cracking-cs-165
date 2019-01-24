@@ -39,7 +39,7 @@ for i, e in enumerate(example):
 test = bit_string('abcd')
 print(test)
 
-fuck = int('100010', 2)
+fuck = int('0011', 2)
 print(fuck)
 
 base_64 = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
