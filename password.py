@@ -95,7 +95,7 @@ for i in range(1):
         final = ':'.join("{:02x}".format(ord(c)) for c in intermediate_sum[-1])
         final = final.split(':')
         print(final)
-        new_final = list()
+        new_final = [None] * 16
         for i, o in enumerate(order):
                 new_final[i] = final[o]
 

@@ -31,7 +31,10 @@ if isinstance(x, str):
 print(some)
 
 example = [1,2,4,5]
-
+testing = [None] * 16
 for i, e in enumerate(example):
     print(i)
     print(e)
+
+testing[1] = 'ok'
+print(testing)
