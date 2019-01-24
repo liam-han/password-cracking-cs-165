@@ -109,5 +109,5 @@ for i in range(1):
         new_list = new_list.join(final_string)
 
         print(new_list)
-
+        print(len(new_list))
         
