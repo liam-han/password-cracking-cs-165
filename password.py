@@ -105,7 +105,9 @@ for i in range(1):
                 print(c)
                 x = bit_string(c)
                 final_string.append(x)
-        final_string2 = ''.join("{:02x}".format(ord(c)) for c in final_string)
-        print(final_string2)
+        new_list = ''
+        new_list = new_list.join(final_string)
+
+        print(new_list)
 
         
