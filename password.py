@@ -98,7 +98,6 @@ for i in range(1):
         p = p.join(final)
         print('this is final')
         print(p)
-        p = p[16:]
         new_final = [None] * 16
         for i, o in enumerate(order):
                 new_final[i] = p[o]
