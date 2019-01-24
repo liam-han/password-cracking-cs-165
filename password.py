@@ -104,6 +104,12 @@ for i in range(1):
         bits = bit_string(new_list)
         print(new_list)
         print(bits)
+
+        bits = bits[::-1]
+        n = 6
+        six_bits = [bits[i:i+n] for i in range(0, len(bits), n)]
+        print(six_bits)
+
         '''final_string = []
         for c in new_final:
                 print(c)
