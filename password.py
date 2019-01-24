@@ -66,22 +66,24 @@ for i in range(1):
         intermediate_sum_0 = md5(password + magic + salt + l + init5).digest()
         t = ":".join("{:02x}".format(ord(c)) for c in intermediate_sum_0)
         print(t)
-        intermediate_sum = ''
+        int_sum = ''
+        intermediate_sum = list()
+        intermediate_sum.append(intermediate_sum_0)
         for i in range(999):
                 if i%2 == 0:
-                        intermediate_sum += intermediate_sum_0
+                        int_sum += intermediate_sum[i]
                 if i%2 != 0:
-                        intermediate_sum += password
+                        int_sum += password
                 if i%3 != 0:
-                        intermediate_sum += salt
+                        int_sum += salt
                 if i%7 != 0:
-                        intermediate_sum += password
+                        int_sum += password
                 if i%2 == 0:
-                        intermediate_sum += password
+                        int_sum += password
                 if i%2 != 0:
-                        intermediate_sum += intermediate_sum_0
+                        int_sum += intermediate_sum[i]
                 
-                intermediate_sum[i] = md5(intermediate_sum).digest()
+                intermediate_sum.append(md5(int_sum).digest())
 
         intermediate_sum_1000 = ascii(intermediate_sum[-1])
         print(intermediate_sum_1000)
