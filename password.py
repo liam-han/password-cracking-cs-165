@@ -99,7 +99,7 @@ for i in range(1):
         for i, o in enumerate(order):
                 new_final[i] = final[o]
 
-        new_list = []
+        new_list = ''
         new_list = new_list.join(new_final)
         bits = bit_string(new_list)
         print(new_final)
