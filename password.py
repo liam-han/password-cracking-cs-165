@@ -94,7 +94,8 @@ for i in range(1):
         print(intermediate_sum_1000)
         final = ':'.join("{:02x}".format(ord(c)) for c in intermediate_sum[-1])
         final = final.split(':')
-        final = final.join(final)
+        p = ''
+        p = p.join(final)
         print('this is final')
         print(final)
         new_final = [None] * 16
