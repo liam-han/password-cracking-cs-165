@@ -94,14 +94,13 @@ for i in range(1):
         print(intermediate_sum_1000)
         final = ':'.join("{:02x}".format(ord(c)) for c in intermediate_sum[-1])
         final = final.split(':')
-        print(final)
+        final = final[16:]
         new_final = [None] * 16
         for i, o in enumerate(order):
                 new_final[i] = final[o]
 
         new_list = ''
         new_list = new_list.join(new_final)
-        new_list = new_list[11:]
         bits = bit_string(new_list)
 
         print(new_list)
