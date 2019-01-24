@@ -38,3 +38,8 @@ for i, e in enumerate(example):
 
 testing[1] = 'ok'
 print(testing)
+
+g = 'a'
+
+g.append('b')
+print(g)
