@@ -18,7 +18,7 @@ def ascii(string):
     return ascii_code
 
 def bit_string(string):
-    x = ' '.join(('{0:08b}'.format(ord(x), 'b')) for x in string)
+    x = ''.join(('{0:08b}'.format(ord(x), 'b')) for x in string)
 
     return x
 
