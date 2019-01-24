@@ -102,6 +102,7 @@ for i in range(1):
         print(new_final) 
         final_string = ''
         for c in new_final:
+                print(c)
                 final_string.join(bit_string(c))
 
         print(final_string)
