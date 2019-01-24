@@ -100,5 +100,10 @@ for i in range(1):
                 new_final[i] = final[o]
 
         print(new_final) 
+        final_string = ''
+        for c in new_final:
+                final_string.join(bit_string(c))
+
+        print(final_string)
 
         
