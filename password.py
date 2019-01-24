@@ -111,11 +111,11 @@ for i in range(1):
                 o.append(bits[-6:])
                 bits = bits[:-6]
         print(o)
-
+        pw = ''
         for each in o:
                 fuck = int(each, 2)
-                print(base_64[fuck])
-
+                pw.append(base_64[fuck])
+        print(pw)
 
         '''final_string = []
         for c in new_final:
