@@ -97,7 +97,7 @@ for i in range(1):
         p = ''
         p = p.join(final)
         print('this is final')
-        print(final)
+        print(p)
         new_final = [None] * 16
         for i, o in enumerate(order):
                 new_final[i] = final[o]
