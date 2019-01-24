@@ -92,7 +92,7 @@ for i in range(1):
 
         intermediate_sum_1000 = ascii(intermediate_sum[-1])
         print(intermediate_sum_1000)
-        final = ''.join("{:02x}".format(ord(c)) for c in intermediate_sum)
+        final = ''.join("{:02x}".format(ord(c)) for c in intermediate_sum[-1])
         print(final)
 
         new_final = list()
