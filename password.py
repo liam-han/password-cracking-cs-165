@@ -8,7 +8,8 @@ from hashlib import md5
 salt = 'hfT7jp2q'
 hashh = 'DbF6xvgpiK3Nu1un54h3V1'
 magic = "$1$"
-
+base_64 = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+order = [11,4,10,5,3,9,15,2,8,14,1, 7, 13, 0, 6, 12]
 
 def ascii(string):
     #ascii_code = ':'.join(str(ord(ch)) for ch in string)
@@ -16,16 +17,21 @@ def ascii(string):
 
     return ascii_code
 
-def bit(number):
+def bit_string(string):
+    x = ' '.join(format(ord(x), 'b') for x in string)
+
+    return x
+
+
+def bit_int(number):
     b = '{0:04b}'.format(number)
     bit_len = len(b)
-    print(b)
     bits = [(number >> bit) & 1 for bit in range(bit_len - 1, -1, -1)]
     
     return b
 
 def four(password, length):
-    x = int(bit(length))
+    x = int(bit_int(length))
     x = (str(x))
     x = x[::-1]
     print(x)
@@ -86,3 +92,13 @@ for i in range(1):
 
         intermediate_sum_1000 = ascii(intermediate_sum[-1])
         print(intermediate_sum_1000)
+        final = ''.join("{:02x}".format(ord(c)) for c in intermediate_sum)
+        print(final)
+
+        new_final = list()
+        for i, o in enumerate(order):
+                new_final[i] = final[o]
+
+        print(new_final) 
+
+        
