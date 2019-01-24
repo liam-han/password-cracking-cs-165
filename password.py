@@ -101,7 +101,9 @@ for i in range(1):
 
         new_list = ''
         new_list = new_list.join(new_final)
+        new_list = new_list[11:]
         bits = bit_string(new_list)
+
         print(new_list)
         print(bits)
         n = 6
