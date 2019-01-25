@@ -147,7 +147,7 @@ for i in range(1):
                 pw.append(base_64[fuck])
         new_pw = ''
         new_pw = new_pw.join(pw)
-        print(new_pw)
+        print(new_pw[-1])
 
         '''final_string = []
         for c in new_final:
