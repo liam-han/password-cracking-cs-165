@@ -36,10 +36,11 @@ for i, e in enumerate(example):
     print(i)
     print(e)
 
-test = bit_string('100010')
+test = bit_string('01100010')
+print('test')
 print(test)
 
-fuck = int('0011', 2)
+fuck = int('01100010', 2)
 print(fuck)
 
 base_64 = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'

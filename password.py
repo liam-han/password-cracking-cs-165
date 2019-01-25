@@ -9,7 +9,7 @@ salt = 'hfT7jp2q'
 hashh = 'DbF6xvgpiK3Nu1un54h3V1'
 magic = "$1$"
 base_64 = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-order = [11,4,10,5,3,9,15,2,8,14,1, 7, 13, 0, 6, 12]
+order = [11,4,10,5,3,9,15,2,8,14,1,7,13,0,6,12]
 
 def ascii(string):
     #ascii_code = ':'.join(str(ord(ch)) for ch in string)
@@ -120,8 +120,8 @@ for i in range(1):
         for each in o:
                 fuck = int(each, 2)
                 pw.append(base_64[fuck])
-        print('pw')
-        print(pw)
+        new_pw = new_pw.join(pw)
+        print(new_pw)
 
         '''final_string = []
         for c in new_final:
