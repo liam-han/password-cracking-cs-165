@@ -153,15 +153,4 @@ for i in range(2):
 end = time.time()
 print(end - start)
 print('Passwords per second: ')
-print(counter/(end-start)
-        '''final_string = []
-        for c in new_final:
-                print(c)
-                x = bit_string(c)
-                final_string.append(x)
-        new_list = ''
-        new_list = new_list.join(final_string)
-
-        print(new_list)
-        print(len(new_list))
-        '''
+print(counter/(end-start))
