@@ -5,9 +5,12 @@ from hashlib import md5
 
 # team47:$1$hfT7jp2q$DbF6xvgpiK3Nu1un54h3V1:16653:0:99999:7:::
 
-salt = 'hfT7jp2q'
-hashh = 'DbF6xvgpiK3Nu1un54h3V1'
+
+hashh = "u6EkeePAlgl3wYcJ56O9o."
+salt = "hfT7jp2q"
 magic = "$1$"
+salt = 'hfT7jp2q'
+
 base_64 = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 order = [11,4,10,5,3,9,15,2,8,14,1,7,13,0,6,12]
 
@@ -16,11 +19,6 @@ def ascii(string):
     ascii_code = ":".join("{:02x}".format(ord(c)) for c in string)  
 
     return ascii_code
-
-def bit_string(string):
-    x = ''.join(('{0:04b}'.format(ord(x), 'b')) for x in string)
-
-    return x
 
 
 def bit_int(number):
