@@ -145,8 +145,7 @@ for i in range(3):
         if new_pw == hashh:
                 print("THE PASSWORD IS: " + new_pw)
                 print(new_pw)
-
-                break
+                quit()
 end = time.time()
 print(end - start)
 print('Passwords per second: ')
