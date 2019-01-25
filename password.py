@@ -120,7 +120,7 @@ for i in range(1):
         for each in o:
                 fuck = int(each, 2)
                 pw.append(base_64[fuck])
-        new_pew = ''
+        new_pw = ''
         new_pw = new_pw.join(pw)
         print(new_pw)
 
