@@ -1,6 +1,8 @@
 from itertools import product
 from string import ascii_lowercase
 from hashlib import md5
+import time
+
 
 
 # team47:$1$hfT7jp2q$DbF6xvgpiK3Nu1un54h3V1:16653:0:99999:7:::
@@ -63,11 +65,14 @@ def convert_to_binary(string):
 
     }[string]
 
+counter = 0
+start = time.time()
 
-for i in range(1):
-    passwords = [''.join(letter) for letter in product(ascii_lowercase, repeat = i+2)]
+for i in range(2):
+    passwords = [''.join(letter) for letter in product(ascii_lowercase, repeat = i+1)]
     for password in passwords:
-        password = 'abcdef'
+        counter+=1
+        #password = 'abcdef'
         
 
         alternate_sum = md5(password + salt + password).digest()
@@ -108,12 +113,11 @@ for i in range(1):
                 intermediate_sum.append(md5(int_sum).digest())
 
         intermediate_sum_1000 = ascii(intermediate_sum[-1])
-        print(intermediate_sum_1000)
+        #print(intermediate_sum_1000)
         final = ':'.join("{:02x}".format(ord(c)) for c in intermediate_sum[-1])
         
         final = final.split(':')
-        print('final')
-        print(final)
+       
         '''p =
         p = p.join(final)
         print('this is final')
@@ -121,8 +125,6 @@ for i in range(1):
         new_final = [None] * 16
         for i, o in enumerate(order):
                 new_final[i] = final[o]
-        print(new_final)
-        print('new_final^')
 
         new_list = ''
         new_list = new_list.join(new_final)
@@ -130,23 +132,28 @@ for i in range(1):
         for c in new_list:
                 bits += convert_to_binary(c)
         
-        print(bits)
 
         '''six_bits = [bits[i:i+n] for i in range(0, len(bits), n)]'''
         o = []
         while bits:
                 o.append(bits[-6:])
                 bits = bits[:-6]
-        print('re ordered')
-        print(o)
+
         pw = []
         for each in o:
                 fuck = int(each, 2)
                 pw.append(base_64[fuck])
         new_pw = ''
         new_pw = new_pw.join(pw)
-        print(new_pw[-1])
+        print(new_pw)
+        if new_pw == hashh:
+                print(new_pw)
 
+                break
+end = time.time()
+print(end - start)
+print('Passwords per second: ')
+print(counter/(end-start)
         '''final_string = []
         for c in new_final:
                 print(c)
