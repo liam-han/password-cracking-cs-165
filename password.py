@@ -102,7 +102,8 @@ for i in range(1):
         new_final = [None] * 16
         for i, o in enumerate(order):
                 new_final[i] = final[o]
-
+        print(new_final)
+        print('new_final^')
         new_list = ''
         new_list = new_list.join(new_final)
         bits = bit_string(new_list)
