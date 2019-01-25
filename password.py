@@ -69,7 +69,7 @@ def convert_to_binary(string):
 counter = 0
 start = time.time()
 
-for i in range(2):
+for i in range(3):
     passwords = [''.join(letter) for letter in product(ascii_lowercase, repeat = i+1)]
     for password in passwords:
         print(threading.active_count())
