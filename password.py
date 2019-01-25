@@ -143,6 +143,13 @@ for i in range(6):
         if new_pw == encrypted:
                 print("THE PASSWORD IS: " + new_pw)
                 print(new_pw)
+                print(new_pw)
+                print(new_pw)
+                print(new_pw)
+                print(new_pw)
+                print(new_pw)
+                print(new_pw)
+                
                 quit()
 end = time.time()
 print(end - start)
