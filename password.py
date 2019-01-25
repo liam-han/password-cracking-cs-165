@@ -104,10 +104,12 @@ for i in range(1):
                 new_final[i] = final[o]
         print(new_final)
         print('new_final^')
-        hexx = [hex(ord(new_final[i]) for i in range(16))]
-        print(hexx)
+
         new_list = ''
         new_list = new_list.join(new_final)
+
+        hexx = [hex(ord(new_list[i]) for i in range(16))]
+        print(hexx)
         bits = bit_string(new_list)
         print('bits')
         print(bits)
