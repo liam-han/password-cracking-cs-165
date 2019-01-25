@@ -61,11 +61,9 @@ for i in range(1):
         else:
                 l = (alternate_sum*5)[:len1]
         init5 = four(password, len1)
-        print(ascii(l))
-        print(ascii(init5))
-        combine = ascii(password + magic + salt + l + init5)
-        print("combine")
-        print(combine)  
+        
+        #combine = ascii(password + magic + salt + l + init5)
+       
 
         intermediate_sum_0 = md5(password + magic + salt + l + init5).digest()
         t = ":".join("{:02x}".format(ord(c)) for c in intermediate_sum_0)
@@ -95,6 +93,8 @@ for i in range(1):
         final = ':'.join("{:02x}".format(ord(c)) for c in intermediate_sum[-1])
         
         final = final.split(':')
+        print('final')
+        print(final)
         '''p =
         p = p.join(final)
         print('this is final')
@@ -106,17 +106,20 @@ for i in range(1):
         new_list = ''
         new_list = new_list.join(new_final)
         bits = bit_string(new_list)
-
+        print('bits')
+        print(bits)
         '''six_bits = [bits[i:i+n] for i in range(0, len(bits), n)]'''
         o = []
         while bits:
                 o.append(bits[-6:])
                 bits = bits[:-6]
+        print('re ordered')
         print(o)
         pw = []
         for each in o:
                 fuck = int(each, 2)
                 pw.append(base_64[fuck])
+        print('pw')
         print(pw)
 
         '''final_string = []
