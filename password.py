@@ -107,7 +107,8 @@ for i in range(1):
 
         new_list = ''
         new_list = new_list.join(new_final)
-
+        print('herehrehree')
+        print(new_list)
         hexx = [hex(ord(new_list[i]) for i in range(16))]
         print(hexx)
         bits = bit_string(new_list)
