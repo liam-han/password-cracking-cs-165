@@ -35,7 +35,6 @@ def four(password, length):
     x = int(bit_int(length))
     x = (str(x))
     x = x[::-1]
-    print(x)
     string = '' 
     letter = password[0]
     for c in x:
@@ -94,7 +93,6 @@ for i in range(2):
 
         intermediate_sum_0 = md5(password + magic + salt + l + init5).digest()
         t = ":".join("{:02x}".format(ord(c)) for c in intermediate_sum_0)
-        print(t)
         
         intermediate_sum = list()
         intermediate_sum.append(intermediate_sum_0)
@@ -121,10 +119,6 @@ for i in range(2):
         
         final = final.split(':')
        
-        '''p =
-        p = p.join(final)
-        print('this is final')
-        print(p)'''
         new_final = [None] * 16
         for i, o in enumerate(order):
                 new_final[i] = final[o]
@@ -134,9 +128,7 @@ for i in range(2):
         bits = ''
         for c in new_list:
                 bits += convert_to_binary(c)
-        
 
-        '''six_bits = [bits[i:i+n] for i in range(0, len(bits), n)]'''
         o = []
         while bits:
                 o.append(bits[-6:])
