@@ -128,16 +128,12 @@ for i in range(1):
 
         new_list = ''
         new_list = new_list.join(new_final)
-        new_string = ''
+        bits = ''
         for c in new_list:
-                new_string += convert_to_binary(c)
+                bits += convert_to_binary(c)
         
-        print(new_string)
-
-       
-        bits = bit_string(new_string)
-        print('bits')
         print(bits)
+
         '''six_bits = [bits[i:i+n] for i in range(0, len(bits), n)]'''
         o = []
         while bits:
