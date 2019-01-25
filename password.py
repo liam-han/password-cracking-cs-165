@@ -70,7 +70,6 @@ start = time.time()
 
 for i in range(2):
     passwords = [''.join(letter) for letter in product(ascii_lowercase, repeat = i+1)]
-    print(len(passwords))
     for password in passwords:
         counter+=1
         #password = 'abcdef'
@@ -155,3 +154,4 @@ end = time.time()
 print(end - start)
 print('Passwords per second: ')
 print(counter/(end-start))
+print(len(passwords))
