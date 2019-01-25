@@ -44,6 +44,27 @@ def four(password, length):
             string += 'a'
     return string
 
+def convert_to_binary(string):
+    return {
+        '0': "0000",
+        '1': "0001",
+        '2': "0010",
+        '3': "0011",
+        '4': "0100",
+        '5': "0101",
+        '6': "0110",
+        '7': "0111",
+        '8': "1000",
+        '9': "1001",
+        'a': "1010",
+        'b': "1011",
+        'c': "1100",
+        'd': "1101",
+        'e': "1110",
+        'f': "1111"
+
+    }[string]
+
 
 for i in range(1):
     passwords = [''.join(letter) for letter in product(ascii_lowercase, repeat = i+2)]
@@ -107,11 +128,14 @@ for i in range(1):
 
         new_list = ''
         new_list = new_list.join(new_final)
-        print('herehrehree')
-        print(new_list)
-        hexx = [hex(ord(new_list[i])) for i in range(32)]
-        print(hexx)
-        bits = bit_string(new_list)
+        new_string = ''
+        for c in new_list:
+                new_string += convert_to_binary(c)
+        
+        print(new_string)
+
+       
+        bits = bit_string(new_string)
         print('bits')
         print(bits)
         '''six_bits = [bits[i:i+n] for i in range(0, len(bits), n)]'''
