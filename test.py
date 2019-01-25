@@ -7,11 +7,6 @@ for i in range(3):
     passwords = [''.join(letter) for letter in product(ascii_lowercase, repeat = i+2)]
     print(passwords)"""
 
-def bit_string(string):
-    x = ' '.join('{0:08b}'.format(ord(x), 'b') for x in string)
-
-    return x
-
 
 def bit_int(number):
     b = '{0:04b}'.format(number)
@@ -21,26 +16,15 @@ def bit_int(number):
     return b
 
 
-x = '6'
+def bit_string(string):
+    x =  ' '.join(format(ord(x), 'b') for x in string)
 
-if isinstance(x, int):
-    some = bit_int(x)
-if isinstance(x, str):
-    some = bit_string(x)
+    return x
+word = int('abcd')
+x = bit_string(test)
+print(x)
 
-print(some)
+print(len(x))
 
-example = [1,2,4,5]
-testing = [None] * 16
-for i, e in enumerate(example):
-    print(i)
-    print(e)
-
-test = bit_string('01100010')
-print('test')
-print(test)
-
-fuck = int('01100010', 2)
-print(fuck)
-
-base_64 = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+y = bit_int(38)
+print(y)
