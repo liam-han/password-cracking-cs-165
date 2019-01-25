@@ -93,22 +93,20 @@ for i in range(1):
         intermediate_sum_1000 = ascii(intermediate_sum[-1])
         print(intermediate_sum_1000)
         final = ':'.join("{:02x}".format(ord(c)) for c in intermediate_sum[-1])
+        
         final = final.split(':')
-        p = ''
+        '''p =
         p = p.join(final)
         print('this is final')
-        print(p)
+        print(p)'''
         new_final = [None] * 16
         for i, o in enumerate(order):
-                new_final[i] = p[o]
+                new_final[i] = final[o]
 
         new_list = ''
         new_list = new_list.join(new_final)
         bits = bit_string(new_list)
 
-        print(new_list)
-        print(bits)
-        n = 6
         '''six_bits = [bits[i:i+n] for i in range(0, len(bits), n)]'''
         o = []
         while bits:
