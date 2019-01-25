@@ -9,11 +9,10 @@ import threading
 # team47:$1$hfT7jp2q$DbF6xvgpiK3Nu1un54h3V1:16653:0:99999:7:::
 
 
-hashh = "u6EkeePAlgl3wYcJ56O9o."
+encrypted = "u6EkeePAlgl3wYcJ56O9o."
 salt = "hfT7jp2q"
 magic = "$1$"
 salt = 'hfT7jp2q'
-hashh = 'KcfnqS/Don20PKkIBh6.W0'
 
 base_64 = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 order = [11,4,10,5,3,9,15,2,8,14,1,7,13,0,6,12]
@@ -69,11 +68,10 @@ def convert_to_binary(string):
 counter = 0
 start = time.time()
 
-for i in range(3):
+for i in range(6):
     passwords = [''.join(letter) for letter in product(ascii_lowercase, repeat = i+1)]
     for password in passwords:
         print(threading.active_count())
-
         counter+=1
         #password = 'abcdef'
         
@@ -142,7 +140,7 @@ for i in range(3):
         new_pw = ''
         new_pw = new_pw.join(pw)
         print(new_pw)
-        if new_pw == hashh:
+        if new_pw == encrypted:
                 print("THE PASSWORD IS: " + new_pw)
                 print(new_pw)
                 quit()
