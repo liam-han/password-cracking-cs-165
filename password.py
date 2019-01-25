@@ -12,8 +12,6 @@ import threading
 encrypted = "u6EkeePAlgl3wYcJ56O9o."
 salt = "hfT7jp2q"
 magic = "$1$"
-salt = 'hfT7jp2q'
-
 base_64 = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 order = [11,4,10,5,3,9,15,2,8,14,1,7,13,0,6,12]
 
@@ -141,6 +139,7 @@ for i in range(6):
         new_pw = new_pw.join(pw)
         print(new_pw)
         if new_pw == encrypted:
+                print('\n')
                 print("THE PASSWORD IS: " + new_pw)
                 print(new_pw)
                 print(new_pw)
@@ -149,10 +148,11 @@ for i in range(6):
                 print(new_pw)
                 print(new_pw)
                 print(new_pw)
-                
                 quit()
 end = time.time()
+print('time: ')
 print(end - start)
+print('\n')
 print('Passwords per second: ')
 print(counter/(end-start))
 #print(len(passwords))
