@@ -67,12 +67,11 @@ counter = 0
 start = time.time()
 
 for i in range(6):
-    passwords = [''.join(letter) for letter in product(ascii_lowercase, repeat = i+1)]
-    for password in passwords:
+    for letter in product(ascii_lowercase, repeat = i+1):
+        password = ''.join(letter) 
         print(threading.active_count())
         counter+=1
         #password = 'abcdef'
-        
 
         alternate_sum = md5(password + salt + password).digest()
         x = ":".join("{:02x}".format(ord(c)) for c in alternate_sum) 
