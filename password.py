@@ -162,9 +162,9 @@ def password(n):
 
 
 if __name__ == "__main__": 
-        t1 = threading.Thread(target=password, args=(2,)) 
+        t1 = threading.Thread(target=password, args=(2, )) 
         t1.start()
-        t2 = threading.Thread(target=password, args=(3,))
+        t2 = threading.Thread(target=password, args=(3, ))
         t2.start() 
         # wait until thread 1 is completely executed 
         t1.join()  
