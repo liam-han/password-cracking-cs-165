@@ -163,7 +163,7 @@ if __name__ == "__main__":
         t2.start()''' 
         # wait until thread 1 is completely executed 
         t1.join()  
-        t2.join() 
+        #t2.join() 
 
         end = time.time()
         print('time: ')
