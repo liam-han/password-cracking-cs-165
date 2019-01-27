@@ -68,8 +68,8 @@ def convert_to_binary(string):
 
 def password(n):
         counter = 0
-        for i in range(1):
-                for letter in product(ascii_lowercase, repeat = n):
+        for i in range(3):
+                for letter in product(ascii_lowercase, repeat = i+1):
                         password = ''.join(letter) 
                         print(threading.active_count())
                         counter+=1
@@ -155,12 +155,12 @@ def password(n):
 
 
 if __name__ == "__main__": 
-        t1 = threading.Thread(target=password, args=(2, )) 
+        t1 = threading.Thread(target=password, args=(3, )) 
         t1.start()
         start = time.time()
 
-        t2 = threading.Thread(target=password, args=(3, ))
-        t2.start() 
+        '''t2 = threading.Thread(target=password, args=(3, ))
+        t2.start()''' 
         # wait until thread 1 is completely executed 
         t1.join()  
         t2.join() 
