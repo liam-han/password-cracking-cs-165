@@ -72,93 +72,93 @@ def main():
         start = time.time()
 
         for i in range(2):
-        for letter in product(ascii_lowercase, repeat = i+1):
-                password = ''.join(letter) 
-                print(threading.active_count())
-                counter+=1
-                #password = 'abcdef'
+                for letter in product(ascii_lowercase, repeat = i+1):
+                        password = ''.join(letter) 
+                        print(threading.active_count())
+                        counter+=1
+                        #password = 'abcdef'
 
-                alternate_sum = md5(password + salt + password).digest()
-                x = ":".join("{:02x}".format(ord(c)) for c in alternate_sum) 
-                len1 = len(password)
-                len2 = len(alternate_sum)
-                if len1 < len2:
-                        l = alternate_sum[:len1]
+                        alternate_sum = md5(password + salt + password).digest()
+                        x = ":".join("{:02x}".format(ord(c)) for c in alternate_sum) 
+                        len1 = len(password)
+                        len2 = len(alternate_sum)
+                        if len1 < len2:
+                                l = alternate_sum[:len1]
 
-                else:
-                        l = (alternate_sum*5)[:len1]
-                init5 = four(password, len1)
-                
-                #combine = ascii(password + magic + salt + l + init5)
-        
-
-                intermediate_sum_0 = md5(password + magic + salt + l + init5).digest()
-                t = ":".join("{:02x}".format(ord(c)) for c in intermediate_sum_0)
-                
-                intermediate_sum = list()
-                intermediate_sum.append(intermediate_sum_0)
-                for i in range(1000):
-                        int_sum = ''
-                        if i%2 == 0:
-                                int_sum += intermediate_sum[i]
-                        if i%2 != 0:
-                                int_sum += password
-                        if i%3 != 0:
-                                int_sum += salt
-                        if i%7 != 0:
-                                int_sum += password
-                        if i%2 == 0:
-                                int_sum += password
-                        if i%2 != 0:
-                                int_sum += intermediate_sum[i]
+                        else:
+                                l = (alternate_sum*5)[:len1]
+                        init5 = four(password, len1)
                         
-                        intermediate_sum.append(md5(int_sum).digest())
-
-                intermediate_sum_1000 = ascii(intermediate_sum[-1])
-                #print(intermediate_sum_1000)
-                final = ':'.join("{:02x}".format(ord(c)) for c in intermediate_sum[-1])
+                        #combine = ascii(password + magic + salt + l + init5)
                 
-                final = final.split(':')
-        
-                new_final = [None] * 16
-                for i, o in enumerate(order):
-                        new_final[i] = final[o]
 
-                new_list = ''
-                new_list = new_list.join(new_final)
-                bits = ''
-                for c in new_list:
-                        bits += convert_to_binary(c)
+                        intermediate_sum_0 = md5(password + magic + salt + l + init5).digest()
+                        t = ":".join("{:02x}".format(ord(c)) for c in intermediate_sum_0)
+                        
+                        intermediate_sum = list()
+                        intermediate_sum.append(intermediate_sum_0)
+                        for i in range(1000):
+                                int_sum = ''
+                                if i%2 == 0:
+                                        int_sum += intermediate_sum[i]
+                                if i%2 != 0:
+                                        int_sum += password
+                                if i%3 != 0:
+                                        int_sum += salt
+                                if i%7 != 0:
+                                        int_sum += password
+                                if i%2 == 0:
+                                        int_sum += password
+                                if i%2 != 0:
+                                        int_sum += intermediate_sum[i]
+                                
+                                intermediate_sum.append(md5(int_sum).digest())
 
-                o = []
-                while bits:
-                        o.append(bits[-6:])
-                        bits = bits[:-6]
+                        intermediate_sum_1000 = ascii(intermediate_sum[-1])
+                        #print(intermediate_sum_1000)
+                        final = ':'.join("{:02x}".format(ord(c)) for c in intermediate_sum[-1])
+                        
+                        final = final.split(':')
+                
+                        new_final = [None] * 16
+                        for i, o in enumerate(order):
+                                new_final[i] = final[o]
 
-                pw = []
-                for each in o:
-                        fuck = int(each, 2)
-                        pw.append(base_64[fuck])
-                new_pw = ''
-                new_pw = new_pw.join(pw)
-                print(new_pw)
-                if new_pw == encrypted:
-                        print('\n')
-                        print("THE PASSWORD IS: " + new_pw)
+                        new_list = ''
+                        new_list = new_list.join(new_final)
+                        bits = ''
+                        for c in new_list:
+                                bits += convert_to_binary(c)
+
+                        o = []
+                        while bits:
+                                o.append(bits[-6:])
+                                bits = bits[:-6]
+
+                        pw = []
+                        for each in o:
+                                fuck = int(each, 2)
+                                pw.append(base_64[fuck])
+                        new_pw = ''
+                        new_pw = new_pw.join(pw)
                         print(new_pw)
-                        print(new_pw)
-                        print(new_pw)
-                        print(new_pw)
-                        print(new_pw)
-                        print(new_pw)
-                        print(new_pw)
-                        quit()
-        end = time.time()
-        print('time: ')
-        print(end - start)
-        print('\n')
-        print('Passwords per second: ')
-        print(counter/(end-start))
+                        if new_pw == encrypted:
+                                print('\n')
+                                print("THE PASSWORD IS: " + new_pw)
+                                print(new_pw)
+                                print(new_pw)
+                                print(new_pw)
+                                print(new_pw)
+                                print(new_pw)
+                                print(new_pw)
+                                print(new_pw)
+                                quit()
+                end = time.time()
+                print('time: ')
+                print(end - start)
+                print('\n')
+                print('Passwords per second: ')
+                print(counter/(end-start))
 
 
 
