@@ -66,8 +66,7 @@ def convert_to_binary(string):
     }[string]
 
 
-def main():
-
+def password():
         counter = 0
         start = time.time()
 
@@ -162,7 +161,22 @@ def main():
 
 
 
-pool = Pool(10)
-result = pool.map(main, range(1000))
+if __name__ == "__main__": 
+        t1 = threading.Thread(target=password, args=()) 
+        t2 = threading.Thread(target=password, args=())
+
+                        # starting thread 1 
+        t1.start() 
+        # starting thread 2 
+        t2.start() 
+        
+        # wait until thread 1 is completely executed 
+        t1.join() 
+        # wait until thread 2 is completely executed 
+        t2.join() 
+        
+        # both threads completely executed 
+        print("Done!")
+
 
 #print(len(passwords))
