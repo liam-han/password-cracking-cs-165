@@ -166,11 +166,11 @@ if __name__ == "__main__":
         t2.join() 
 
         end = time.time()
-                print('time: ')
-                print(end - start)
-                print('\n')
-                print('Passwords per second: ')
-                print(counter/(end-start))
+        print('time: ')
+        print(end - start)
+        print('\n')
+        print('Passwords per second: ')
+        #print(counter/(end-start))
         
         # both threads completely executed 
         print("Done!")
