@@ -68,8 +68,8 @@ def convert_to_binary(string):
 
 def password(n):
         counter = 0
-        for i in range(n):
-                for letter in product(ascii_lowercase, repeat = i+1):
+        for i in range(1):
+                for letter in product(ascii_lowercase, repeat = n):
                         password = ''.join(letter) 
                         print(threading.active_count())
                         counter+=1
