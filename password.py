@@ -179,7 +179,9 @@ def password():
 
 #print(len(passwords))"""
 
+
 if __name__ == "__main__":
+        start = time.time()
 	size = 10000000   # Number of random numbers to add
 	procs = 10   # Number of processes to create
 
