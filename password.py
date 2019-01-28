@@ -68,10 +68,10 @@ def convert_to_binary(string):
     }[string]
 
 
-def password():
+def password(n):
         counter = 0
         for i in range(3):
-                for letter in product(ascii_lowercase, repeat = i+1):
+                for letter in product(ascii_lowercase, repeat = n):
                         password = ''.join(letter) 
                         print(threading.active_count())
                         counter+=1
@@ -180,27 +180,13 @@ def password():
 #print(len(passwords))"""
 
 
-if __name__ == "__main__":
-        start = time.time()
-	size = 10000000   # Number of random numbers to add
-	procs = 10   # Number of processes to create
-
-	# Create a list of jobs and then iterate through
-	# the number of processes appending each process to
-	# the job list
-	jobs = []
-	for i in range(0, procs):
-		out_list = list()
-		process = multiprocessing.Process(target=password,
-			                              args=())
-		jobs.append(process)
-
-	# Start the processes (i.e. calculate the random number lists)
-	for j in jobs:
-		j.start()
-
-	# Ensure all of the processes have finished
-	for j in jobs:
-		j.join()
-        end = time.time()
-        print(end - start)
+if __name__ == '__main__':
+   start = time.time()
+   for k in range(1):
+        pool = Pool(10)
+        pool.map_async(password, range(6,7))
+        pool.close()
+        pool.join()
+   
+   end = time.time()
+   print(end-start)
