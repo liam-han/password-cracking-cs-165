@@ -181,7 +181,7 @@ def password():
 
 if __name__ == "__main__":
 	size = 10000000   # Number of random numbers to add
-	procs = 2   # Number of processes to create
+	procs = 10   # Number of processes to create
 
 	# Create a list of jobs and then iterate through
 	# the number of processes appending each process to
@@ -200,3 +200,5 @@ if __name__ == "__main__":
 	# Ensure all of the processes have finished
 	for j in jobs:
 		j.join()
+        end = time.time()
+        print(end - start)
