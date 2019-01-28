@@ -1,5 +1,5 @@
 import random
-import multiprocessing
+import threading
 
 
 def list_append(count, id, out_list):
@@ -13,23 +13,22 @@ def list_append(count, id, out_list):
 
 if __name__ == "__main__":
 	size = 10000000   # Number of random numbers to add
-	procs = 2   # Number of processes to create
+	threads = 2   # Number of threads to create
 
 	# Create a list of jobs and then iterate through
-	# the number of processes appending each process to
+	# the number of threads appending each thread to
 	# the job list
 	jobs = []
-	for i in range(0, procs):
+	for i in range(0, threads):
 		out_list = list()
-		process = multiprocessing.Process(target=list_append,
-			                              args=(size, i, out_list))
-		jobs.append(process)
+		thread = threading.Thread(target=list_append(size, i, out_list))
+		jobs.append(thread)
 
-	# Start the processes (i.e. calculate the random number lists)
+	# Start the threads (i.e. calculate the random number lists)
 	for j in jobs:
 		j.start()
 
-	# Ensure all of the processes have finished
+	# Ensure all of the threads have finished
 	for j in jobs:
 		j.join()
 

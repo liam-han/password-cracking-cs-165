@@ -4,6 +4,8 @@ from hashlib import md5
 import time
 import threading
 from multiprocessing.dummy import Pool
+import random
+import multiprocessing
 
 
 
@@ -66,7 +68,7 @@ def convert_to_binary(string):
     }[string]
 
 
-def password(n):
+def password():
         counter = 0
         for i in range(3):
                 for letter in product(ascii_lowercase, repeat = i+1):
@@ -154,13 +156,12 @@ def password(n):
 
 
 
-if __name__ == "__main__": 
-        t1 = threading.Thread(target=password, args=(3, )) 
+"""if __name__ == "__main__": 
+        t1 = threading.Thread(target=password, args=(2, )) 
+        t2 = threading.Thread(target=password, args=(3, ))
         t1.start()
         start = time.time()
-
-        '''t2 = threading.Thread(target=password, args=(3, ))
-        t2.start()''' 
+        t2.start()
         # wait until thread 1 is completely executed 
         t1.join()  
         #t2.join() 
@@ -176,4 +177,26 @@ if __name__ == "__main__":
         print("Done!")
 
 
-#print(len(passwords))
+#print(len(passwords))"""
+
+if __name__ == "__main__":
+	size = 10000000   # Number of random numbers to add
+	procs = 2   # Number of processes to create
+
+	# Create a list of jobs and then iterate through
+	# the number of processes appending each process to
+	# the job list
+	jobs = []
+	for i in range(0, procs):
+		out_list = list()
+		process = multiprocessing.Process(target=password,
+			                              args=())
+		jobs.append(process)
+
+	# Start the processes (i.e. calculate the random number lists)
+	for j in jobs:
+		j.start()
+
+	# Ensure all of the processes have finished
+	for j in jobs:
+		j.join()
