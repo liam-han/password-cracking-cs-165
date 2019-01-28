@@ -183,8 +183,10 @@ def password(n):
 if __name__ == '__main__':
    start = time.time()
    for k in range(1):
-        pool = Pool(10)
-        pool.map_async(password, range(6,7))
+        #pool = Pool(10)
+        print(multiprocessing.cpu_count())
+        pool = multiprocessing.Semaphore(multiprocessing.cpu_count()) 
+        pool.map_async(password, range(4,5))
         pool.close()
         pool.join()
    

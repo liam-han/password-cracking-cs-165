@@ -2,6 +2,7 @@ from multiprocessing import Pool, cpu_count
 import time
 from itertools import product
 from string import ascii_lowercase
+import multiprocessing
 
 
 
@@ -25,11 +26,14 @@ def f(n):
 if __name__ == '__main__':
    start = time.time()
    for k in range(1):
-        pool = Pool(8)
-        pool.map_async(program, range(6,7))
+        #pool = Pool(10)
+        print(multiprocessing.cpu_count())
+       
+        pool = Pool(multiprocessing.cpu_count())
+        pool.map_async(program, range(2,3))
         pool.close()
         pool.join()
-   
+   print(multiprocessing.cpu_count())
+
    end = time.time()
    print(end-start)
-
