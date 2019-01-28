@@ -70,9 +70,10 @@ def convert_to_binary(string):
 
 def password(n):
         counter = 0
-        for i in range(3):
+        for i in range(1):
                 for letter in product(ascii_lowercase, repeat = n):
                         password = ''.join(letter) 
+                        print(password)
                         print(threading.active_count())
                         counter+=1
                         #password = 'abcdef'
@@ -182,13 +183,16 @@ def password(n):
 
 if __name__ == '__main__':
    start = time.time()
-   for k in range(1):
+   password(3)
+   '''for k in range(1):
         #pool = Pool(10)
         print(multiprocessing.cpu_count())
-        pool = multiprocessing.Semaphore(multiprocessing.cpu_count()) 
+       
+        pool = Pool(multiprocessing.cpu_count())
         pool.map_async(password, range(4,5))
         pool.close()
         pool.join()
-   
+   print(multiprocessing.cpu_count())'''
+
    end = time.time()
    print(end-start)
