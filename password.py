@@ -153,8 +153,6 @@ def password(n):
                                 print(new_pw)
                                 print(new_pw)
                                 quit()
-                
-
 
 
 """if __name__ == "__main__": 
