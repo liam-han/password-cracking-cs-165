@@ -79,7 +79,7 @@ def password(num):
         letters = []
         letters = num
         counter = 0
-        for i in range(3):
+        for i in range(5):
                 for letter in product(letters, repeat = i+1):
                         password = ''.join(letter) 
                         print(password)
