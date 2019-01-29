@@ -82,7 +82,7 @@ def password(num):
         for i in range(5):
                 for letter in product(letters, repeat = i+1):
                         password = ''.join(letter) 
-                        print(password)
+                        #print(password)
                         counter+=1
                         #password = 'abcdef'
 
@@ -149,7 +149,7 @@ def password(num):
                                 pw.append(base_64[fuck])
                         new_pw = ''
                         new_pw = new_pw.join(pw)
-                        #print(new_pw)
+                        print(new_pw)
                         if new_pw == encrypted:
                                 print('\n')
                                 print("THE PASSWORD IS: " + new_pw)
@@ -198,7 +198,7 @@ if __name__ == '__main__':
         
         for i in range(26):
                 p = Process(target=password, args=(mixed[i],))
-                print(mixed[i])
+                #print(mixed[i])
                 p.start()
         p.join()
                 
