@@ -189,7 +189,7 @@ if __name__ == '__main__':
         letters_2.append(letters)
         for x in range(26):
                 letters.insert(0, letters.pop())
-                print(letters)
+               # print(letters)
                 letters_2.append(letters)
 
         for i in range(26):
