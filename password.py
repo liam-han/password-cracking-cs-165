@@ -191,10 +191,10 @@ if __name__ == '__main__':
                 letters.insert(0, letters.pop())
                # print(letters)
                 letters_2.append(letters)
-
+        print(letters_2[2])
         for i in range(26):
                 p = Process(target=password, args=(letters_2[i],))
-                print(letters_2[i])
+                print(letters_2[2])
                 p.start()
         p.join()
                 
