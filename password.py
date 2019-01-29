@@ -82,10 +82,9 @@ def password(num):
                 for letter in product(letters, repeat = i+1):
                         print(threading.active_count())
                         password = ''.join(letter) 
-                        #print(password)
+                        print(password)
                         counter+=1
-                        #password = 'abcdef'
-
+                        
                         alternate_sum = md5(password + salt + password).digest()
                         x = ":".join("{:02x}".format(ord(c)) for c in alternate_sum) 
                         len1 = len(password)
@@ -196,7 +195,7 @@ if __name__ == '__main__':
         
         for i in range(26):
                 p = Process(target=password, args=(mixed[i],))
-                #print(mixed[i])
+                print(mixed[i])
                 p.start()
         p.join()
                 
