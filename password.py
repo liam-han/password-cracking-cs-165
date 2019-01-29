@@ -82,7 +82,7 @@ def password(num):
         for i in range(3):
                 for letter in product(letters, repeat = i+1):
                         password = ''.join(letter) 
-                        
+                        print(password)
                         counter+=1
                         #password = 'abcdef'
 
