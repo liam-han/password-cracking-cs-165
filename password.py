@@ -36,6 +36,10 @@ def bit_int(number):
     
     return b
 
+
+def rotate(l):
+    return l[-1:] + l[:-1]
+
 def four(password, length):
     x = int(bit_int(length))
     x = (str(x))
@@ -185,17 +189,15 @@ def password(num):
 
 if __name__ == '__main__':
         start = time.time()
-        letters_2 = list()
-        letters_2.append(letters)
-        for x in range(26):
-                letters.insert(0, letters.pop())
-               # print(letters)
-                letters_2.append(letters)
-                
+        
+        mixed = []
+        for i in range(26):
+                letters = rotate(letters)
+                mixed.append(letters)
+                        
       
         for i in range(26):
-                p = Process(target=password, args=(letters_2[i],))
-                print(letters_2[2])
+                p = Process(target=password, args=(mixed[i],))
                 p.start()
         p.join()
                 
