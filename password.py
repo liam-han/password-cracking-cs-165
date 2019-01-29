@@ -4,7 +4,6 @@ from hashlib import md5
 import time
 import threading
 from multiprocessing.dummy import Pool
-import random
 from multiprocessing import Process
 
 
@@ -100,9 +99,8 @@ def password(num):
                         
                         #combine = ascii(password + magic + salt + l + init5)
                 
-
                         intermediate_sum_0 = md5(password + magic + salt + l + init5).digest()
-                        t = ":".join("{:02x}".format(ord(c)) for c in intermediate_sum_0)
+                        #t = ":".join("{:02x}".format(ord(c)) for c in intermediate_sum_0)
                         
                         intermediate_sum = list()
                         intermediate_sum.append(intermediate_sum_0)
