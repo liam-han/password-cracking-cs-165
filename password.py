@@ -185,13 +185,13 @@ def password(num):
 
 if __name__ == '__main__':
         start = time.time()
-        letters_2 = []
+        letters_2 = list()
         letters_2.append(letters)
         for x in range(26):
                 letters.insert(0, letters.pop())
                # print(letters)
                 letters_2.append(letters)
-                print(letters_2)
+                
       
         for i in range(26):
                 p = Process(target=password, args=(letters_2[i],))
