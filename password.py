@@ -193,7 +193,7 @@ if __name__ == '__main__':
         start = time.time()
    
         for i in range(26):
-                p = Process(target=password, args=(i))
+                p = Process(target=password, args=(i,))
                 p.start()
         p.join()
                 
