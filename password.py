@@ -189,7 +189,7 @@ def password(num):
 
 if __name__ == '__main__':
         start = time.time()
-        print(threading._count())
+        print(threading.active_count())
         mixed = []
         for i in range(26):
                 letters = rotate(letters)
