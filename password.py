@@ -195,6 +195,7 @@ if __name__ == '__main__':
 
 
         for abc in letters_2:
+                print(abc)
                 p = Process(target=password, args=(abc))
                 p.start()
         p.join()
