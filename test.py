@@ -3,37 +3,20 @@ import time
 from itertools import product
 from string import ascii_lowercase
 import multiprocessing
+letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+'''for letter in product(a, repeat = 3):
+                        password = ''.join(letter) 
+                        print(password)
+'''
+letters_2 = []
+letters_2.append(letters)
+for x in range(26):
+    letters.insert(0, letters.pop())
+    print(letters)
+    letters_2.append(letters)
 
 
-
-def program(n):
-    counter = 0
-    for letter in product(ascii_lowercase, repeat = n):
-        password = ''.join(letter) 
-        counter += 1
-
-        print(password)
-    return password
-
-def f(n):
-    for letter in product(ascii_lowercase, repeat = n):
-        password = ''.join(letter) 
-        if password == 'bbbbb':
-            break
-        print(password)
-    return password
-
-if __name__ == '__main__':
-   start = time.time()
-   for k in range(1):
-        #pool = Pool(10)
-        print(multiprocessing.cpu_count())
-       
-        pool = Pool(multiprocessing.cpu_count())
-        pool.map_async(program, range(2,3))
-        pool.close()
-        pool.join()
-   print(multiprocessing.cpu_count())
-
-   end = time.time()
-   print(end-start)
+for letter in product(letters, repeat = 4):
+    password = ''.join(letter) 
+    print(password)

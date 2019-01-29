@@ -5,7 +5,8 @@ import time
 import threading
 from multiprocessing.dummy import Pool
 import random
-import multiprocessing
+from multiprocessing import Process
+
 
 
 
@@ -18,6 +19,8 @@ salt = "hfT7jp2q"
 magic = "$1$"
 base_64 = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 order = [11,4,10,5,3,9,15,2,8,14,1,7,13,0,6,12]
+letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
 
 def ascii(string):
     #ascii_code = ':'.join(str(ord(ch)) for ch in string)
@@ -68,13 +71,13 @@ def convert_to_binary(string):
     }[string]
 
 
-def password(n):
+def password(abc):
         counter = 0
-        for i in range(1):
-                for letter in product(ascii_lowercase, repeat = n):
+        for i in range(6):
+                for letter in product(abc, repeat = i+1):
                         password = ''.join(letter) 
                         print(password)
-                        print(threading.active_count())
+                        
                         counter+=1
                         #password = 'abcdef'
 
@@ -180,17 +183,21 @@ def password(n):
 
 
 if __name__ == '__main__':
-   start = time.time()
-   password(3)
-   '''for k in range(1):
-        #pool = Pool(10)
-        print(multiprocessing.cpu_count())
-       
-        pool = Pool(multiprocessing.cpu_count())
-        pool.map_async(password, range(4,5))
-        pool.close()
-        pool.join()
-   print(multiprocessing.cpu_count())'''
+        start = time.time()
+   
+        letters_2 = []
+        letters_2.append(letters)
+        for x in range(26):
+                letters.insert(0, letters.pop())
+                print(letters)
+                letters_2.append(letters)
 
-   end = time.time()
-   print(end-start)
+
+
+        for abc in letters_2:
+                p = Process(target=password, args=(abc))
+                p.start()
+        p.join()
+                
+        end = time.time()
+        print(end-start)
