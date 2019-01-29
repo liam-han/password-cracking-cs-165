@@ -81,6 +81,7 @@ def password(num):
         counter = 0
         for i in range(5):
                 for letter in product(letters, repeat = i+1):
+                        print(threading.active_count())
                         password = ''.join(letter) 
                         #print(password)
                         counter+=1
@@ -189,7 +190,6 @@ def password(num):
 
 if __name__ == '__main__':
         start = time.time()
-        print(threading.active_count())
         mixed = []
         for i in range(26):
                 letters = rotate(letters)
