@@ -72,16 +72,11 @@ def convert_to_binary(string):
 
 
 def password(num):
-
-        letters_2 = []
-        letters_2.append(letters)
-        for x in range(26):
-                letters.insert(0, letters.pop())
-                print(letters)
-                letters_2.append(letters)
+        letters = []
+        letters = num
         counter = 0
         for i in range(3):
-                for letter in product(letters_2[num], repeat = i+1):
+                for letter in product(letters, repeat = i+1):
                         password = ''.join(letter) 
                         print(letters_2[num])
                         
@@ -191,9 +186,15 @@ def password(num):
 
 if __name__ == '__main__':
         start = time.time()
-   
+        letters_2 = []
+        letters_2.append(letters)
+        for x in range(26):
+                letters.insert(0, letters.pop())
+                print(letters)
+                letters_2.append(letters)
+
         for i in range(26):
-                p = Process(target=password, args=(i,))
+                p = Process(target=password, args=(letters_2[i],))
                 p.start()
         p.join()
                 
