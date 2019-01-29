@@ -189,15 +189,16 @@ def password(num):
 
 if __name__ == '__main__':
         start = time.time()
-        
+        print(threading._count())
         mixed = []
         for i in range(26):
                 letters = rotate(letters)
                 mixed.append(letters)
                         
-      
+        
         for i in range(26):
                 p = Process(target=password, args=(mixed[i],))
+                print(mixed[i])
                 p.start()
         p.join()
                 
