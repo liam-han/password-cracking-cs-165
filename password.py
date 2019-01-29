@@ -78,7 +78,6 @@ def password(num):
         for i in range(3):
                 for letter in product(letters, repeat = i+1):
                         password = ''.join(letter) 
-                        print(letters)
                         
                         counter+=1
                         #password = 'abcdef'
@@ -195,6 +194,7 @@ if __name__ == '__main__':
 
         for i in range(26):
                 p = Process(target=password, args=(letters_2[i],))
+                print(letters_2[i])
                 p.start()
         p.join()
                 
