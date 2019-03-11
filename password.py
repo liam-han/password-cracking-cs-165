@@ -155,29 +155,6 @@ def password(num):
                                 quit()
 
 
-"""if __name__ == "__main__": 
-        t1 = threading.Thread(target=password, args=(2, )) 
-        t2 = threading.Thread(target=password, args=(3, ))
-        t1.start()
-        start = time.time()
-        t2.start()
-        # wait until thread 1 is completely executed 
-        t1.join()  
-        #t2.join() 
-
-        end = time.time()
-        print('time: ')
-        print(end - start)
-        print('\n')
-        print('Passwords per second: ')
-        #print(counter/(end-start))
-        
-        # both threads completely executed 
-        print("Done!")
-
-
-#print(len(passwords))"""
-
 
 if __name__ == '__main__':
         start = time.time()
